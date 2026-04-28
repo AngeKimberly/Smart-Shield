@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="@color/design_default_color_error">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_launcher_foreground"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="SmartShield Logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="APP BLOCKED"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/blocked_app_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This app is blocked by SmartShield Parental Control"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter PIN to deactivate Child Mode"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/pin_input"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Enter 4-digit PIN"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/unlock_button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Deactivate Child Mode"
+        android:textSize="16sp"
+        android:background="@android:color/white"
+        android:textColor="@color/design_default_color_error" />
+
+</LinearLayout>

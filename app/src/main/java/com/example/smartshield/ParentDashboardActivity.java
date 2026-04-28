@@ -137,10 +137,27 @@ public class ParentDashboardActivity extends AppCompatActivity {
                 } else {
                     appRuleDao.deleteRule(packageName);
                 }
+                
+                // Update UI on main thread
+                runOnUiThread(() -> {
+                    String action = isWhitelisted ? "whitelisted" : "removed from whitelist";
+                    Toast.makeText(ParentDashboardActivity.this, 
+                        getAppNameFromPackage(packageName) + " " + action, 
+                        Toast.LENGTH_SHORT).show();
+                });
             });
         });
     }
 
+    private String getAppNameFromPackage(String packageName) {
+        for (AppModel app : installedApps) {
+            if (app.getPackageName().equals(packageName)) {
+                return app.getAppName();
+            }
+        }
+        return packageName;
+    }
+    
     private void activateChildMode() {
         Toast.makeText(this, "Child Mode Activated", Toast.LENGTH_SHORT).show();
         
